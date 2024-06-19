@@ -20,8 +20,12 @@ from backend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home),
+    
+    path('',views.home, name="home"),
+    path('about',views.about, name="test"),
+    path('contact',views.contact),
     path('api/hello', views.home,name = "altyon"),
     path('course/<int:id>',views.courseDetails),
-    path('about',views.about),
+    path('submit',views.submitDetails),
+    
 ]
