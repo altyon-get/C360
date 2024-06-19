@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#i+a9lyfzq8oe(3qjefus60ps5^i=u07u*xmy2kgcn361#ll1r'
+SECRET_KEY = 'django-insecure-t%i$vr)v&*1td(e=bmmutl119a(vy7t7d#evnjg3mu&qh@ydk$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,10 +40,6 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
-]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,12 +51,14 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS: True
+
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR,'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +125,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]

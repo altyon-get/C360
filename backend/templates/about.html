@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About C360</title>
+    <link rel="stylesheet" href="/static/css/about.css"/>
+</head>
+<body>
+    <header>
+        <h3>Search for colleges, exams, courses...</h3>
+        <h4>{{title}}</h4>
+    </header>
+    Exams:
+    {%for n in exams%}
+    <div>{{forloop.counter}}. {{n}}</div>
+    {%endfor%}
+    <br>
+    Courses:
+    {%for n in courses%}
+    <div>{{forloop.last}} {{n}}</div>
+    {%endfor%}
+    <br>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th> Name </th>
+            <th> Phone </th>
+        </tr>
+        
+        {%for d in councellers%}
+        <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% for n in numbers%}
+        {% if n < 4 %}
+            {% if n == 1 %}
+                numbers less than 4:
+            {% endif %}
+            {{n}}
+        {% elif n < 7 %}
+            {% if n == 4 %} 
+                numbers less than 7:
+            {% endif %}
+            {{n}}
+        {% else %}
+            {% if n == 8 %} 
+                rest:
+            {% endif %}
+            {{n}}
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

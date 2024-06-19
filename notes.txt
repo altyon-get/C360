@@ -1,0 +1,7 @@
+pip freeze
+django-admin startproject backend
+python3 manage.py runserver
+python3 manage.py migrate
+python3 manage.py createsuperuser
+user: altyon
+password: admin (kya ki krloge jaan ke)
