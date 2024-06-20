@@ -27,5 +27,6 @@ urlpatterns = [
     path('api/hello', views.home,name = "altyon"),
     path('course/<int:id>',views.courseDetails),
     path('submit',views.submitDetails),
-    
+    path('calc',views.calc),
+    path('submit_operation',views.submit_operation),
 ]

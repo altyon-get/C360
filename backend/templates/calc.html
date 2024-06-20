@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content%}
+<main>
+    <h2>Math Operation Form</h2>
+    <form method="post" action="/submit_operation">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="num1">Number 1:</label>
+            <input type="number" value="{{n1}}" id="num1" name="num1" required>
+        </div>
+        <div class="form-group">
+            <label for="num2">Number 2:</label>
+            <input type="number" value="{{n2}}" id="num2" name="num2" required>
+        </div>
+        <div class="form-group">
+            <label for="operation">Operation:</label>
+            <select id="operation" name="operation" required>
+                <option value="+">Addition (+)</option>
+                <option value="-">Subtraction (-)</option>
+                <option value="/">Division (/)</option>
+                <option value="*">Multiplication (*)</option>
+            </select>
+        </div>
+        <button type="submit">Calculate</button>
+        <h2>Operation Result</h2>
+    <p>Result: {{ result }}</p>
+    </form>
+</main>
+{% endblock %}

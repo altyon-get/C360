@@ -4,7 +4,7 @@
         <h3>Search for colleges, exams, courses...</h3>
         <h4>{{title}}</h4>
     </header>
-    Exams:
+    {% comment %} Exams:
     {%for n in exams%}
     <div>{{forloop.counter}}. {{n}}</div>
     {%endfor%}
@@ -13,7 +13,7 @@
     {%for n in courses%}
     <div>{{forloop.last}} {{n}}</div>
     {%endfor%}
-    <br>
+    <br> {% endcomment %}
     <table border="1" cellpadding="10">
         <tr>
             <th> Name </th>
@@ -28,6 +28,7 @@
         {% endfor %}
     </table>
     <br>
+    <div>
     {% for n in numbers%}
         {% if n < 4 %}
             {% if n == 1 %}
@@ -46,5 +47,12 @@
             {{n}}
         {% endif %}
     {% endfor %}
-
+    </div>
+    
+    <div>
+    Data from model: [Courses]
+    {% for a in serviceData %}
+       {{forloop.counter}} {{a.service_name}}
+    {% endfor %}  
+    </div>
 {% endblock %}

@@ -5,3 +5,15 @@ python3 manage.py migrate
 python3 manage.py createsuperuser
 user: altyon
 password: admin (kya ki krloge jaan ke)
+
+
+result = 2 / 5  # result will be 0.4
+result = 2 // 5  # result will be 0
+request.POST.get('num1'): Use when the key may or may not exist, and you want to avoid raising an exception.
+request.POST['num1']: Use when you are sure the key exists.
+
+
+Models:
+python3 manage.py startapp service
+python3 manage.py makemigrations
+python3 manage.py migrate
